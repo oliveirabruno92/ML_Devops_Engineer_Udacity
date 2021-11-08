@@ -1,3 +1,12 @@
+"""
+Author: Bruno
+Date Created: 2021-11-08
+
+This modules tests different functions from churn_library module and
+log any INFO or ERROR into churn_library.log file. The tests functions
+are written to prevent the functions from churn_library module from breaking.
+"""
+
 import os
 import sys
 import glob
@@ -16,6 +25,10 @@ logging.basicConfig(
 
 @pytest.fixture(name='dataset_raw')
 def dataset_raw_():
+    """
+    Pytest Fixture to import data from DATA_PATH
+    :return: Dataset raw
+    """
     try:
         dataset_raw = churn_library.import_data(Config.DATA_PATH)
         logging.info("Testing import_data: SUCCESS")
@@ -26,21 +39,13 @@ def dataset_raw_():
     return dataset_raw
 
 
-# @pytest.fixture(name='dataset_sample')
-# def dataset_sample_(dataset_raw):
-#     try:
-#         dataset_sample = dataset_raw.sample(frac=0.1, random_state=42)
-#         logging.info("Testing dataset sample: SUCCESS")
-#     except BaseException as err:
-#         logging.error("Dataset sample: Failed to sample from dataset raw")
-#         raise err
-#
-#     return dataset_sample
-
-
 @pytest.fixture(name='dataset_with_target')
 def dataset_with_target_(dataset_raw):
-
+    """
+    Pytest fixture to create target column on dataset raw
+    :param dataset_raw: Dataset with no transformation
+    :return: Dataset with target column
+    """
     try:
         dataset_with_target = churn_library.encode_target(dataset_raw)
         logging.info("Testing encode target: SUCCESS")

@@ -1,4 +1,7 @@
 """
+Author: Bruno
+Date Created: 2021-11-08
+
 This is the churn_library.py module that encapsulates churn model eda, training and predictions.
 Artifact produced will be in images, logs and models folders.
 """
