@@ -15,10 +15,10 @@ This is a module to train and validate models for ***Prediction Customer Churn**
 --- 
 
 First, the Docker image must be build using:
-> make build
+> docker build -t ${PROJECT} .
 
 After image is built you can run all prediction pipeline with:
-> make run
+> docker run --rm ${PROJECT}
 
 If you want to running unit tests for the library just use:
-> make tests
+> docker run --rm ${PROJECT} test_churn_library.py
