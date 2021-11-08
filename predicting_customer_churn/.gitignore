@@ -1,0 +1,6 @@
+.pytest_cache/*
+images/*
+logs/*
+models/*
+.idea/*
+__pycache__/*.pyc
