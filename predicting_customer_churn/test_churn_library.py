@@ -17,10 +17,11 @@ import churn_library
 from config import Config
 
 logging.basicConfig(
-    filename='./logs/churn_library.log',
+    filename='logs/churn_library.log',
     level=logging.INFO,
     filemode='w',
-    format='%(name)s - %(levelname)s - %(message)s')
+    format='%(name)s - %(levelname)s - %(message)s'
+)
 
 
 @pytest.fixture(name='dataset_raw')
@@ -130,14 +131,16 @@ def test_encode_target(dataset_with_target):
         assert dataset_with_target.shape[1] > 0
     except AssertionError as err:
         logging.error(
-            "Testing encoder_helper: The dataframe doesn't appear to have rows and columns")
+            "Testing encoder_helper: The dataframe doesn't appear to have rows and columns"
+        )
         raise err
 
     try:
         assert Config.RESPONSE in dataset_with_target
     except AssertionError as err:
         logging.error(
-            "Testing encoder_target: The dataframe doesn't have the target column")
+            "Testing encoder_target: The dataframe doesn't have the target column"
+        )
         raise err
     logging.info("Testing encoder_helper: SUCCESS")
 
@@ -151,7 +154,8 @@ def test_encoder_helper(dataset_encoded):
         assert dataset_encoded.shape[1] > 0
     except AssertionError as err:
         logging.error(
-            "Testing encoder_helper: The dataframe doesn't appear to have rows and columns")
+            "Testing encoder_helper: The dataframe doesn't appear to have rows and columns"
+        )
         raise err
 
     try:
