@@ -244,7 +244,7 @@ def roc_curve_plot(models_to_compare, test_features, test_target, output_pth):
     ax = plt.gca()
     for model in models_to_compare:
         plot_roc_curve(model, test_features, test_target, ax=ax, alpha=0.8)
-    plt.savefig(f"images/{output_pth}/roc_curve_result.jpg")
+    plt.savefig(f"images/{output_pth}/roc_curve_results.jpg")
     plt.show()
 
 
