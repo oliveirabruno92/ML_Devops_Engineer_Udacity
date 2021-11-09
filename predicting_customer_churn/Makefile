@@ -4,7 +4,7 @@ build:
 	 @docker build -t ${PROJECT} .
 
 tests:
-	@docker run ${PROJECT} test_churn_library.py
+	@docker run ${PROJECT} pytest --disable-warning
 
 run:
 	@docker run --rm ${PROJECT}

@@ -14,5 +14,4 @@ RUN mkdir -p /churn_library/logs && \
     mkdir -p /churn_library/images/eda && \
     mkdir -p /churn_library/images/results
 
-ENTRYPOINT ["python"]
-CMD ["churn_library.py"]
+CMD ["python", "churn_library.py"]
