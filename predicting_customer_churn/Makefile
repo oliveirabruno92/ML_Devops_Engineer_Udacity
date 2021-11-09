@@ -4,7 +4,7 @@ build:
 	 @docker build -t ${PROJECT} .
 
 tests:
-	@docker run --rm ${PROJECT} test_churn_library.py
+	@docker run ${PROJECT} test_churn_library.py
 
 run:
 	@docker run --rm ${PROJECT}

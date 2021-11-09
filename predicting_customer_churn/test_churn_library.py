@@ -221,7 +221,7 @@ def test_train_models(split_data):
 
 
 if __name__ == "__main__":
-    for directory in ["logs", "images/eda", "images/results", "./models"]:
+    for directory in ["logs", "images/eda", "images/results", "models"]:
         for file in glob.glob(f"{directory}/*"):
             os.remove(file)
     sys.exit(pytest.main(["-s"]))
