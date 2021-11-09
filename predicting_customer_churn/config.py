@@ -1,3 +1,11 @@
+"""
+Author: Bruno
+Date Created: 2021-11-08
+
+This config class was created to stores all constants used on our library.
+"""
+
+
 class Config:
 
     CATEGORICAL_COLS = [
